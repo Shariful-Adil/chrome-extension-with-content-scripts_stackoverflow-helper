@@ -1,0 +1,32 @@
+{
+	"name": "stackoverflow-helper",
+	"version": "1.0",
+	"description": "Apply the background colour and Double click to copy code from Stack Overflow",
+	"manifest_version": 2,
+	"page_action": {
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"32": "images/icon-32.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		}
+	},
+	"icons": {
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://stackoverflow.com/*"
+			],
+			"js": [
+				"scripts/content-script.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"offline_enabled": true
+}
